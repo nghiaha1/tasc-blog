@@ -1,6 +1,7 @@
 package com.tasc.blogging.seeder;
 
 import com.tasc.blogging.entity.blog.Blog;
+import com.tasc.blogging.entity.enums.BlogStatus;
 import com.tasc.blogging.repository.BlogRepository;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import java.util.List;
 public class BlogSeeder {
     @Autowired
     private BlogRepository blogRepository;
+    @Autowired
+    private CategorySeeder categorySeeder;
 
     private final static int ITEM_COUNT = 1000;
 
@@ -24,6 +27,7 @@ public class BlogSeeder {
             Blog blog = Blog.builder()
                     .title(faker.name().title())
                     .content(faker.lorem().paragraph())
+                    .status(BlogStatus.ACTIVE)
                     .build();
             blogs.add(blog);
         }

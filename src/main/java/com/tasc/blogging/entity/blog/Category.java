@@ -1,7 +1,6 @@
 package com.tasc.blogging.entity.blog;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tasc.blogging.entity.base.BaseEntity;
 import com.tasc.blogging.entity.enums.BaseStatus;
@@ -9,6 +8,7 @@ import com.tasc.blogging.util.Constant;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -17,9 +17,11 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "category")
+@Table(name = "category", indexes = {
+        @Index(name = "idx_category_title", columnList = "title")
+})
 @JsonPropertyOrder({"id", "title", "description", "blogs", "parent", "children", "isRoot"})
-public class Category extends BaseEntity {
+public class Category extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

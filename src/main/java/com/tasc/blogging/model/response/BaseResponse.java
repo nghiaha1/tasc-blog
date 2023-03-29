@@ -1,15 +1,19 @@
 package com.tasc.blogging.model.response;
 
+import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class BaseResponse<T> {
+public class BaseResponse<T> implements Serializable {
 
     private int code;
     private String message;
 
+    @SerializedName("data")
     private T data;
 
     public BaseResponse() {

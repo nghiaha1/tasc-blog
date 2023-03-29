@@ -2,8 +2,10 @@ package com.tasc.blogging.model.response;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class BasePagingData<T> {
+public class BasePagingData<T> implements Serializable {
 
     private int currentPage;
     private int size;

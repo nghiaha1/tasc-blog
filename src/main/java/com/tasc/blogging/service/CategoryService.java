@@ -2,7 +2,7 @@ package com.tasc.blogging.service;
 
 import com.tasc.blogging.aop.ApplicationException;
 import com.tasc.blogging.entity.blog.Category;
-import com.tasc.blogging.model.requset.blog.CCreateRequest;
+import com.tasc.blogging.model.requset.blog.CategoryCreateRequest;
 import com.tasc.blogging.model.response.BasePagingData;
 import com.tasc.blogging.model.response.BaseResponse;
 import com.tasc.blogging.model.response.blog.CategoryDTO;
@@ -42,6 +42,18 @@ public class CategoryService {
                 .collect(Collectors.toList());
     }
 
+    public BaseResponse<CategoryDTO> findById(Long id) throws ApplicationException {
+        Optional<Category> optionalCategory = categoryRepository.findById(id);
+        if (optionalCategory.isEmpty())
+            throw new ApplicationException(ERROR.CATEGORY_NOT_FOUND);
+
+        Category category = optionalCategory.get();
+
+        CategoryDTO categoryDTO = convertToDTO(category);
+
+        return new BaseResponse<>("Find By Id Success", categoryDTO);
+    }
+
     public BaseResponse<BasePagingData<List<Category>>> findAll(int page, int size) throws ApplicationException {
         PageRequest pageRequest = PageRequest.of(page, size);
         Page<Category> pageResult = categoryRepository.findAll(pageRequest);
@@ -55,7 +67,7 @@ public class CategoryService {
         return new BaseResponse<>("Find All Success", new BasePagingData<>(currentPage, size, totalPages, totalItems, content));
     }
 
-    public BaseResponse createCategory(CCreateRequest request) throws ApplicationException {
+    public BaseResponse createCategory(CategoryCreateRequest request) throws ApplicationException {
         log.info("1 - Create category request: {}", request);
         validateCreateCategoryRequest(request);
 
@@ -109,7 +121,7 @@ public class CategoryService {
         return new BaseResponse("Delete Category Success");
     }
 
-    private void validateCreateCategoryRequest(CCreateRequest request) throws ApplicationException {
+    private void validateCreateCategoryRequest(CategoryCreateRequest request) throws ApplicationException {
         if (StringUtils.isBlank(request.getTitle())) {
             throw new ApplicationException(ERROR.CATEGORY_TITLE_IS_EMPTY);
         }

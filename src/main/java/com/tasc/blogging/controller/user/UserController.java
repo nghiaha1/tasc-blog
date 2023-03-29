@@ -34,7 +34,7 @@ public class UserController extends BaseController {
         return createdResponse(userService.register(request));
     }
 
-    @GetMapping("/verify")
+    @PutMapping("/verify")
     public ResponseEntity<BaseResponse> verifyEmail(@RequestParam String code) throws ApplicationException {
         return createdResponse(userService.verifyEmail(code));
     }

@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ThumbnailRepository extends JpaRepository<Thumbnail, Long> {
+
 }

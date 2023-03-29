@@ -1,12 +1,14 @@
 package com.tasc.blogging.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.tasc.blogging.entity.base.BaseEntity;
 import com.tasc.blogging.entity.enums.BaseStatus;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -17,7 +19,7 @@ import java.util.List;
 @Builder
 @Table(name = "role")
 @JsonPropertyOrder({"id", "name", "user"})
-public class Role extends BaseEntity {
+public class Role extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

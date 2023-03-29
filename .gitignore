@@ -1,2 +1,3 @@
 # Ignore
 src/main/resources/*
+build/resources/main/*

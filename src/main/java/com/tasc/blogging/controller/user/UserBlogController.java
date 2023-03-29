@@ -2,8 +2,8 @@ package com.tasc.blogging.controller.user;
 
 import com.tasc.blogging.aop.ApplicationException;
 import com.tasc.blogging.controller.BaseController;
-import com.tasc.blogging.model.requset.blog.BCreateRequest;
-import com.tasc.blogging.model.requset.blog.BUpdateRequest;
+import com.tasc.blogging.model.requset.blog.BlogCreateRequest;
+import com.tasc.blogging.model.requset.blog.BlogUpdateRequest;
 import com.tasc.blogging.model.response.BaseResponse;
 import com.tasc.blogging.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +26,10 @@ public class UserBlogController extends BaseController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<BaseResponse> createBlog(@RequestBody BCreateRequest request) throws ApplicationException {
-        return createdResponse(blogService.createBlog(request));
+    public ResponseEntity<BaseResponse> createBlog(@RequestBody BlogCreateRequest request,
+                                                   @RequestHeader(name = "Authorization") String token) throws ApplicationException {
+        String tokenValue = token.split(" ")[1];
+        return createdResponse(blogService.createBlog(request, tokenValue));
     }
 
     @GetMapping("/{id}")
@@ -36,7 +38,23 @@ public class UserBlogController extends BaseController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<BaseResponse> updateBlog(@PathVariable Long id, @RequestBody BUpdateRequest request) throws ApplicationException {
-        return createdResponse(blogService.updateBlog(id, request));
+    public ResponseEntity<BaseResponse> updateBlog(@RequestBody BlogUpdateRequest request,
+                                                   @RequestHeader(name = "Authorization") String token) throws ApplicationException {
+        String tokenValue = token.split(" ")[1];
+        return createdResponse(blogService.updateBlog(request, tokenValue));
+    }
+
+    @PutMapping("/like/{blogId}")
+    public ResponseEntity<BaseResponse> likeBlog(@PathVariable Long blogId,
+                                                 @RequestHeader(name = "Authorization") String token) throws ApplicationException {
+        String tokenValue = token.split(" ")[1];
+        return createdResponse(blogService.likeBlog(blogId, tokenValue));
+    }
+
+    @DeleteMapping("/delete/{blogId}")
+    public ResponseEntity<BaseResponse> deleteBlog(@PathVariable Long blogId,
+                                                   @RequestHeader(name = "Authorization") String token) throws ApplicationException {
+        String tokenValue = token.split(" ")[1];
+        return createdResponse(blogService.deleteBlog(blogId, tokenValue));
     }
 }

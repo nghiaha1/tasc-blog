@@ -10,11 +10,17 @@ public class ApplicationSeeder implements CommandLineRunner {
 
     @Autowired
     private BlogSeeder blogSeeder;
+    @Autowired
+    private UserSeeder userSeeder;
+    @Autowired
+    private CategorySeeder categorySeeder;
 
     @Override
     public void run(String... args) throws Exception {
         if (isSeeded) {
             blogSeeder.seed();
+            userSeeder.seed();
+            categorySeeder.seed();
         }
     }
 }

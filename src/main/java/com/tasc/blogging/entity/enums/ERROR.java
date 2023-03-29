@@ -37,7 +37,18 @@ public enum ERROR {
     BLOG_THUMBNAIL_NOT_FOUND(1032, "Blog thumbnail not found"),
     INVALID_VERIFICATION_CODE(1033, "Invalid verification code"),
     ROLE_NOT_FOUND(1034, "Role not found"),
-    ;
+    COMMENT_NOT_FOUND(1035, "Comment not found"),
+    COMMENT_NOT_DELETED(1036, "Comment not deleted"),
+    COMMENT_NOT_UPDATED(1037, "Comment not updated"),
+    COMMENT_NOT_CREATED(1038, "Comment not created"),
+    COMMENT_CONTENT_IS_EMPTY(1039, "Comment content is empty"),
+    COMMENT_BLOG_NOT_FOUND(1040, "Comment blog not found"),
+    COMMENT_USER_NOT_FOUND(1041, "Comment user not found"),
+    INVALID_COMMENT_REQUEST(1042, "Invalid comment request"),
+    INVALID_ACCESS_TOKEN(1043, "Invalid access token"),
+    USER_NOT_AUTHORIZED(1044, "User not authorized"),
+    BLOG_REQUEST_IS_NULL(1045, "Blog request is null"),
+    BLOG_ID_IS_NULL(1046, "Blog id is null"),;
 
     private int code;
     private String message;

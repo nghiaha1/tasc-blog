@@ -79,21 +79,23 @@ public class UserService implements UserDetailsService {
         }
 
         log.info("3 - Create new user");
+
+        Random r = new Random();
+        String randomNumber = String.format("%04d", Integer.valueOf(r.nextInt(1001)));
+
         User user = User.builder()
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(defaultRole)
-                .verificationCode(UUID.randomUUID().toString())
+                .verificationCode(randomNumber)
                 .status(BaseStatus.PENDING)
                 .build();
 
         log.info("4 - Save user");
 
-        String verificationLink = "http://localhost:8080/api/v1/user/verify?code=" + user.getVerificationCode();
-
         userRepository.save(user);
 
-        sendVerificationEmail(user.getEmail(), verificationLink);
+        sendVerificationEmail(user.getEmail(), user.getVerificationCode());
 
         return new BaseResponse<>("User registered successfully", convertToDTO(user));
     }
@@ -119,15 +121,13 @@ public class UserService implements UserDetailsService {
         return new BaseResponse<>("Email verified successfully", convertToDTO(user));
     }
 
-    private void sendVerificationEmail(String recipientEmail, String verificationLink) {
+    private void sendVerificationEmail(String recipientEmail, String verificationCode) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(recipientEmail);
         message.setSubject("Verify your email address");
-        message.setText("Please click the following link to verify your email address: " + verificationLink);
+        message.setText("Verification Code " + verificationCode);
         mailSender.send(message);
     }
-
-
 
     public BaseResponse login(LoginRequest request, HttpServletRequest httpServletRequest) throws ApplicationException {
         log.info("1 - Login request: {}", request);

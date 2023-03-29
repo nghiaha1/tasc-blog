@@ -1,10 +1,12 @@
 package com.tasc.blogging.entity.blog;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tasc.blogging.entity.base.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -14,7 +16,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "thumbnail")
-public class Thumbnail extends BaseEntity {
+public class Thumbnail extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,7 +2,7 @@ package com.tasc.blogging.controller.user;
 
 import com.tasc.blogging.aop.ApplicationException;
 import com.tasc.blogging.controller.BaseController;
-import com.tasc.blogging.model.requset.blog.CCreateRequest;
+import com.tasc.blogging.model.requset.blog.CategoryCreateRequest;
 import com.tasc.blogging.model.response.BaseResponse;
 import com.tasc.blogging.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,13 @@ public class CategoryController extends BaseController {
         return createdResponse(categoryService.findAll(page - 1, size));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<BaseResponse> findById(@PathVariable Long id) throws ApplicationException {
+        return createdResponse(categoryService.findById(id));
+    }
+
     @PostMapping("/create")
-    public ResponseEntity<BaseResponse> createCategory(@RequestBody CCreateRequest request) throws ApplicationException {
+    public ResponseEntity<BaseResponse> createCategory(@RequestBody CategoryCreateRequest request) throws ApplicationException {
         return createdResponse(categoryService.createCategory(request));
     }
 

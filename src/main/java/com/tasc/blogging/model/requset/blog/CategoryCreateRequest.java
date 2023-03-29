@@ -4,7 +4,7 @@ import com.tasc.blogging.util.Constant;
 import lombok.Data;
 
 @Data
-public class CCreateRequest {
+public class CategoryCreateRequest {
     private String title;
     private String description;
     private Integer isRoot;

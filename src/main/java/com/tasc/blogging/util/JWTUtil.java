@@ -4,6 +4,9 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwts;
 
 import java.util.Date;
 
@@ -13,7 +16,7 @@ public class JWTUtil {
     /*this is jwt secret key use to encode jwt token only backend server hold this key
      * if an attacker know this key his can modify jwt token in the right way to grant access to api
      */
-    private static final String JWT_SECRET_KEY = "pA$$w0rd";
+    private static final String JWT_SECRET_KEY = ".jwdjpagmt1Aasdasdhjaskdhjsakhsadjkhdsajkhsadjkhdsajkxzjkcbnzmxcbnxzmchajsgda";
     //some time units constant
     public static final int ONE_SECOND = 1000;
     public static final int ONE_MINUTE = ONE_SECOND * 60;
@@ -53,5 +56,9 @@ public class JWTUtil {
                 .withIssuer(issuer)
                 .withClaim(JWTUtil.ROLE_CLAIM_KEY, role)
                 .sign(getAlgorithm());
+    }
+
+    public static Jws<Claims> parseToken(String token) {
+        return Jwts.parser().setSigningKey(JWT_SECRET_KEY.getBytes()).parseClaimsJws(token);
     }
 }
