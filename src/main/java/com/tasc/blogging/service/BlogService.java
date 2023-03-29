@@ -2,10 +2,11 @@ package com.tasc.blogging.service;
 
 import com.tasc.blogging.aop.ApplicationException;
 import com.tasc.blogging.entity.blog.Blog;
+import com.tasc.blogging.entity.blog.Category;
 import com.tasc.blogging.entity.blog.Comment;
 import com.tasc.blogging.entity.blog.Thumbnail;
-import com.tasc.blogging.entity.blog.Category;
 import com.tasc.blogging.entity.enums.BlogStatus;
+import com.tasc.blogging.entity.enums.ERROR;
 import com.tasc.blogging.entity.user.User;
 import com.tasc.blogging.model.requset.blog.BlogCreateRequest;
 import com.tasc.blogging.model.requset.blog.BlogUpdateRequest;
@@ -25,7 +26,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import com.tasc.blogging.entity.enums.ERROR;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +62,7 @@ public class BlogService {
                 .collect(Collectors.toList());
     }
 
-    @CachePut(value = "blog", key = "#result.data.id")
+    @CachePut(value = "blogs", key = "#result.body.data.id")
     public BaseResponse<BlogDTO> createBlog(BlogCreateRequest request, String token) throws ApplicationException {
         log.info("1 - Create blog request: {}", request);
         validateCreateBlogRequest(request);
@@ -109,7 +109,7 @@ public class BlogService {
         return new BaseResponse<>("Create Blog Success", blogDTO);
     }
 
-//    @Cacheable(value = "blogs", key = "#page + '-' + #size")
+    @Cacheable(value = "blogs", key = "#page + '-' + #size")
     public BaseResponse<BasePagingData<List<BlogDTO>>> findAll(int page, int size) throws ApplicationException {
         log.info("1 - Find all blogs with page {} and size {}", page, size);
         PageRequest pageRequest = PageRequest.of(page, size);
@@ -138,7 +138,6 @@ public class BlogService {
         return new BaseResponse<>("Find Blog Success", blogDTO);
     }
 
-    @CachePut(value = "blogs", key = "#id")
     public BaseResponse<BlogDTO> updateStatus(Long id) throws ApplicationException {
         Optional<Blog> optionalBlog = blogRepository.findById(id);
         if (optionalBlog.isEmpty()) {
@@ -211,6 +210,7 @@ public class BlogService {
         return new BaseResponse<>("Update Blog Success", blogDTO);
     }
 
+    @CachePut(value = "blogs", key = "#blogId")
     public BaseResponse<BlogDTO> likeBlog(Long blogId, String token) throws ApplicationException {
         String isLike = "Like";
 
@@ -234,7 +234,7 @@ public class BlogService {
         return new BaseResponse<>(isLike + " Blog Success", convertToDTO(blog));
     }
 
-    @CacheEvict(value = "blogs", allEntries = true)
+    @CacheEvict(value = "blogs", key = "#blogId")
     public BaseResponse<String> deleteBlog(Long blogId, String token) throws ApplicationException {
         log.info("1 - Find blog by id: {}", blogId);
         Optional<Blog> optionalBlog = blogRepository.findById(blogId);

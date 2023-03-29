@@ -5,6 +5,7 @@ import com.tasc.blogging.controller.BaseController;
 import com.tasc.blogging.model.response.BaseResponse;
 import com.tasc.blogging.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,6 +19,7 @@ public class AdminBlogController extends BaseController {
     private BlogService blogService;
 
     @PutMapping("/update/status/{id}")
+    @CachePut(value = "blogs", key = "#id")
     public ResponseEntity<BaseResponse> updateStatus(@PathVariable Long id) throws ApplicationException {
         return createdResponse(blogService.updateStatus(id));
     }

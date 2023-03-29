@@ -30,12 +30,12 @@ spring:
           starttls:
             enable: true
 
-redis:
-
+  redis:
+    host: localhost
+    port: 6379
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-#JWT_SECRET_KEY: "pA$$w0rd"

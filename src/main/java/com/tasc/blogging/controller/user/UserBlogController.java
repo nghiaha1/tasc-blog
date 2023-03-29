@@ -7,8 +7,12 @@ import com.tasc.blogging.model.requset.blog.BlogUpdateRequest;
 import com.tasc.blogging.model.response.BaseResponse;
 import com.tasc.blogging.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cache.annotation.Cacheable;
+
 
 @RestController
 @RequestMapping("/api/v1/blog")

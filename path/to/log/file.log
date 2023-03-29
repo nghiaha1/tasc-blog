@@ -605,3 +605,139 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
 	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:272)
 	... 33 common frames omitted
+2023-03-29 14:19:20 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 51964 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:19:20 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:19:22 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:19:22 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@40ecead5
+2023-03-29 14:19:22 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:19:23 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-03-29 14:19:50 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52020 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:19:50 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:19:51 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:19:51 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6d5fea64
+2023-03-29 14:19:51 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:19:52 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.551 seconds (JVM running for 2.913)
+2023-03-29 14:20:15 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 1 - Login request: LoginRequest(email=hacodern@gmail.com, password=123)
+2023-03-29 14:20:15 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 1.1 - Validate login request username: hacodern@gmail.com
+2023-03-29 14:20:15 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 1.2 - Validate login request password: 123
+2023-03-29 14:20:15 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 2 - Find user by email: hacodern@gmail.com
+2023-03-29 14:20:16 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 2.1 - Check user is empty or not
+2023-03-29 14:20:16 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 3 - Check password
+2023-03-29 14:20:16 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.UserService - 4 - Generate credential
+2023-03-29 14:20:22 [http-nio-8080-exec-4] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:20:26 [http-nio-8080-exec-5] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:23:33 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52332 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:23:33 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:23:35 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:23:35 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@6d514259
+2023-03-29 14:23:35 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:23:35 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.775 seconds (JVM running for 3.254)
+2023-03-29 14:23:59 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:24:05 [http-nio-8080-exec-4] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:25:23 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52447 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:25:23 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:25:25 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:25:25 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@28ffa527
+2023-03-29 14:25:25 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:25:26 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.823 seconds (JVM running for 3.12)
+2023-03-29 14:25:30 [http-nio-8080-exec-1] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:25:32 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:25:52 [http-nio-8080-exec-4] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:26:12 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52508 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:26:12 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:26:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:26:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@5e1bfe66
+2023-03-29 14:26:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:26:15 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.598 seconds (JVM running for 3.17)
+2023-03-29 14:26:18 [http-nio-8080-exec-2] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:26:20 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:27:34 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52589 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:27:34 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:27:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:27:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@4a7427f9
+2023-03-29 14:27:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:27:37 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.469 seconds (JVM running for 2.829)
+2023-03-29 14:27:40 [http-nio-8080-exec-1] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:27:45 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:28:17 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52655 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:28:17 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:28:19 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:28:19 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@3dfaa1e4
+2023-03-29 14:28:19 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:28:20 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.791 seconds (JVM running for 3.361)
+2023-03-29 14:28:46 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52699 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:28:46 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:28:49 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:28:49 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@22e650e
+2023-03-29 14:28:49 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:28:50 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 3.407 seconds (JVM running for 3.688)
+2023-03-29 14:29:04 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52731 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:29:04 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:29:06 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:29:06 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@3b171fbd
+2023-03-29 14:29:06 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:29:07 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 3.306 seconds (JVM running for 3.588)
+2023-03-29 14:29:22 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52759 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:29:22 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:29:24 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:29:24 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@d4dbb34
+2023-03-29 14:29:24 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:29:25 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 3.277 seconds (JVM running for 3.648)
+2023-03-29 14:32:35 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 52977 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:32:35 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:32:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:32:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@213bd66a
+2023-03-29 14:32:36 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:32:37 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.63 seconds (JVM running for 3.072)
+2023-03-29 14:34:06 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 53087 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:34:06 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:34:08 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:34:08 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@5d10e2b6
+2023-03-29 14:34:08 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:34:09 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 2.652 seconds (JVM running for 3.106)
+2023-03-29 14:35:13 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 53210 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:35:13 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@7f6936cc
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering cacheManager
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of cacheManager is: org.springframework.cache.concurrent.ConcurrentMapCacheManager@1e5921ec
+2023-03-29 14:35:15 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting cacheManager
+2023-03-29 14:35:16 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 3.178 seconds (JVM running for 3.491)
+2023-03-29 14:35:17 [http-nio-8080-exec-2] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 10
+2023-03-29 14:35:22 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
+2023-03-29 14:37:08 [http-nio-8080-exec-9] INFO  c.tasc.blogging.service.BlogService - 1 - Find blog by id: 1
+2023-03-29 14:37:08 [http-nio-8080-exec-9] ERROR c.tasc.blogging.service.BlogService - Blog not found
+2023-03-29 14:37:12 [http-nio-8080-exec-10] INFO  c.tasc.blogging.service.BlogService - 1 - Find blog by id: 2
+2023-03-29 14:37:12 [http-nio-8080-exec-10] INFO  c.tasc.blogging.service.BlogService - 2 - Check user is owner of blog
+2023-03-29 14:37:12 [http-nio-8080-exec-10] INFO  c.t.blogging.service.CommentService - 4.1 - Decode access token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYWNvZGVybkBnbWFpbC5jb20iLCJyb2xlIjoiREVGQVVMVCIsImlzcyI6Ii9hcGkvdjEvdXNlci9sb2dpbiIsImV4cCI6MTY4MDY3OTIxNn0.Ksqpwq1zJb-EXTIZveu0RDc6ZHI79Z8Ho63Z0oebiIo
+2023-03-29 14:37:12 [http-nio-8080-exec-10] INFO  c.t.blogging.service.CommentService - 4.2 - Get user email from access token
+2023-03-29 14:37:12 [http-nio-8080-exec-10] INFO  c.t.blogging.service.CommentService - 4.3 - Get user from email: hacodern@gmail.com
+2023-03-29 14:38:12 [main] INFO  c.tasc.blogging.BloggingApplication - Starting BloggingApplication using Java 11.0.17 on nghiahas-MacBook-Pro.local with PID 53400 (/Users/nghiaha/Documents/Api/blogging/build/classes/java/main started by nghiaha in /Users/nghiaha/Documents/Api/blogging)
+2023-03-29 14:38:12 [main] INFO  c.tasc.blogging.BloggingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering passwordEncoder
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of passwordEncoder is: org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder@a165c11
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting passwordEncoder
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Entering cacheManager
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Result of cacheManager is: org.springframework.cache.concurrent.ConcurrentMapCacheManager@23f9d0ce
+2023-03-29 14:38:14 [main] INFO  com.tasc.blogging.aop.LoggingAspect - Exiting cacheManager
+2023-03-29 14:38:15 [main] INFO  c.tasc.blogging.BloggingApplication - Started BloggingApplication in 3.101 seconds (JVM running for 3.613)
+2023-03-29 14:38:17 [http-nio-8080-exec-2] INFO  c.tasc.blogging.service.BlogService - 1 - Find blog by id: 2
+2023-03-29 14:38:17 [http-nio-8080-exec-2] INFO  c.tasc.blogging.service.BlogService - 2 - Check user is owner of blog
+2023-03-29 14:38:17 [http-nio-8080-exec-2] INFO  c.t.blogging.service.CommentService - 4.1 - Decode access token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYWNvZGVybkBnbWFpbC5jb20iLCJyb2xlIjoiREVGQVVMVCIsImlzcyI6Ii9hcGkvdjEvdXNlci9sb2dpbiIsImV4cCI6MTY4MDY3OTIxNn0.Ksqpwq1zJb-EXTIZveu0RDc6ZHI79Z8Ho63Z0oebiIo
+2023-03-29 14:38:17 [http-nio-8080-exec-2] INFO  c.t.blogging.service.CommentService - 4.2 - Get user email from access token
+2023-03-29 14:38:17 [http-nio-8080-exec-2] INFO  c.t.blogging.service.CommentService - 4.3 - Get user from email: hacodern@gmail.com
+2023-03-29 14:38:22 [http-nio-8080-exec-3] INFO  c.tasc.blogging.service.BlogService - 1 - Find all blogs with page 0 and size 1000
